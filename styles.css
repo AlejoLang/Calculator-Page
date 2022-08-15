@@ -1,0 +1,103 @@
+* 
+{
+    font-family: 'Roboto', sans-serfif;
+    padding: 0;
+    margin: 0;
+    color: #010400;
+}
+
+body
+{
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.calculatorDiv
+{
+    margin-top: 1rem;
+    background-color: #CEEAF7;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.calculatorDiv-display
+{
+    background-color: #4B4A67;
+    height: 3rem;
+    font-size: 2rem;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.calculatorDiv-buttons
+{
+    margin-top: 1rem;
+    min-height: 350px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.calculatorDiv-buttons-numbers
+{
+    grid-area: 2 / 1 / 6 / 4;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.calculatorDiv-buttons-numbers-number[value="0"]
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    aspect-ratio: initial;
+}
+
+.calculatorDiv-buttons-numbers-number,
+.calculatorDiv-buttons-operator
+{
+    background-color: #CCD7E4;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculatorDiv-buttons-operator[value="AC"]
+{
+    background-color: #DE541E;
+    grid-area: 1 / 4 / 1 / 5;
+}
+
+.calculatorDiv-buttons-operator[value="+"]
+{
+    grid-area: 2 / 4 / 4 / 5;
+}
+
+.calculatorDiv-buttons-operator[value="-"]
+{
+    grid-area: 1 / 3 / 1 / 4;
+}
+
+.calculatorDiv-buttons-operator[value="*"]
+{
+    grid-area: 1 / 2 / 1 / 3;
+}
+
+.calculatorDiv-buttons-operator[value="/"]
+{
+    grid-area: 1 / 1 / 1 / 2;
+}
+
+.calculatorDiv-buttons-operator[value="="]
+{
+    grid-area: 4 / 4 / 6 / 5;
+}
