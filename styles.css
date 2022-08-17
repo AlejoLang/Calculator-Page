@@ -24,13 +24,21 @@ body
 {
     background-color: #4B4A67;
     height: 3rem;
-    font-size: 2rem;
+    font-size: 2.1rem;
     text-align: right;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: 0.5rem;
     border-radius: 10px;
+}
+
+.calculatorDiv-display p 
+{
+    overflow: auto;
+    word-wrap: nowrap;
+    padding: 10px;
+    white-space: nowrap;
 }
 
 .calculatorDiv-buttons
@@ -100,4 +108,26 @@ body
 .calculatorDiv-buttons-operator[value="="]
 {
     grid-area: 4 / 4 / 6 / 5;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #ccd7e4 #4b4a67;
+}
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+}
+
+  *::-webkit-scrollbar-track {
+    background: #4b4a67;
+}
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ccd7e4;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
 }
