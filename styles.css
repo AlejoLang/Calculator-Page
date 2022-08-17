@@ -4,12 +4,17 @@
     padding: 0;
     margin: 0;
     color: #010400;
+    transition: 0.25s ease all;
 }
 
 body
 {
     padding: 1.5rem;
     text-align: center;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #efefef;
 }
 
 .calculatorDiv
@@ -18,6 +23,7 @@ body
     background-color: #CEEAF7;
     padding: 1rem;
     border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .calculatorDiv-display
@@ -71,12 +77,25 @@ body
 .calculatorDiv-buttons-operator
 {
     background-color: #CCD7E4;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 1.2rem;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+
+.calculatorDiv-buttons-numbers-number:hover,
+.calculatorDiv-buttons-operator:hover
+{
+    filter: brightness(80%);
+}
+
+.calculatorDiv-buttons-numbers-number:active,
+.calculatorDiv-buttons-operator:active
+{
+    transform: scale(0.95);
 }
 
 .calculatorDiv-buttons-operator[value="AC"]
@@ -117,7 +136,15 @@ body
     scrollbar-color: #ccd7e4 #4b4a67;
 }
 
-  /* Chrome, Edge, and Safari */
+@media screen and (min-width: 1000px){
+    .calculatorDiv
+    {
+        width: 25vw;
+        margin: 2rem auto;
+    }
+}
+
+/* Scrollbar */
   *::-webkit-scrollbar {
     width: 10px;
 }
