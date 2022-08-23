@@ -91,16 +91,11 @@ body
     background-color: #c0cbd8;
 }
 
-.calculatorDiv-buttons-numbers-number:hover,
-.calculatorDiv-buttons-operator:hover
-{
-    filter: brightness(80%);
-}
-
 .calculatorDiv-buttons-numbers-number:active,
 .calculatorDiv-buttons-operator:active
 {
     transform: scale(0.95);
+    filter: brightness(80%);
 }
 
 .calculatorDiv-buttons-operator[value="AC"]
@@ -151,11 +146,18 @@ body
     scrollbar-color: #ccd7e4 #4b4a67;
 }
 
-@media screen and (min-width: 1000px){
+@media screen and (min-width: 800px){
     .calculatorDiv
     {
         width: 25vw;
         margin: 2rem auto;
+    }
+
+    .calculatorDiv-buttons-numbers-number:hover,
+    .calculatorDiv-buttons-operator:hover
+    {
+        transform: scale(0.95);
+        filter: brightness(80%);
     }
 }
 
