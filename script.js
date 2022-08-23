@@ -10,9 +10,10 @@ display.scrollLeft = display.scrollWidth;
 let operation = [];
 let numAux = '';
 let resDisplayed = false;
+let resIsNan = false;
 
 const calculate = () => {
-    console.log('arr', operation)
+    console.log(operation)
 
     let div = operation.indexOf('/');
     while(div != -1) {
@@ -47,11 +48,18 @@ const calculate = () => {
         resDisplayed = true;
         return;
     }
-    console.log(operation);
+
     if(Math.round(operation[0]) - operation[0] == 0 && operation[0].toString().indexOf('e') === -1) {
         operation[0] = parseInt(operation[0], 10);
     }
+
     display.textContent = operation;
+
+    if(Number.isNaN(operation[0])){
+        resIsNan = true;
+        display.textContent = 'Error';
+    }
+    
     resDisplayed = true;
 }
 
@@ -78,7 +86,6 @@ delBtn.addEventListener('click', () => {
             operation.pop();
         }
     }
-    console.log(numAux, operation)
 })
 
 Object.values(numbs)
@@ -88,6 +95,7 @@ Object.values(numbs)
                 operation = [];
                 numAux = '';
                 resDisplayed = false;
+                resIsNan = false;
             }
 
             display.textContent += event.target.value;
@@ -97,6 +105,14 @@ Object.values(numbs)
 
 Object.values(operators)
         .map(op => op.addEventListener('click', (event) => {
+            
+            if(resIsNan){
+                display.textContent = "";
+                operation = [];
+                numAux = '';
+                resIsNan = false;
+            }
+
             resDisplayed = false;
             display.textContent += event.target.value;
 
