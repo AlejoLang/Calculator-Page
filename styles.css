@@ -164,6 +164,7 @@ body
 /* Scrollbar */
   *::-webkit-scrollbar {
     width: 10px;
+    height: 2px;
 }
 
   *::-webkit-scrollbar-track {
