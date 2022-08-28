@@ -139,7 +139,7 @@ equalBtn.addEventListener('click', () => {
 });
 
 document.addEventListener('keydown', (event) => {
-    if(event.key >= 1 && event.key <= 9 || event.key == '.' || event.key == ','){
+    if(event.key >= 0 && event.key <= 9 || event.key == '.' || event.key == ','){
         document.querySelector(`.calculatorDiv-buttons-numbers-number[value="${event.key}"]`).click();
         return;
     } else if (event.key == '+' || event.key == '-' || event.key == '*' || event.key == '/') {
